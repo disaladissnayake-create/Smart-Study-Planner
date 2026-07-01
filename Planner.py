@@ -3,19 +3,16 @@ tasks = []
 def add_task():
     subject = input("Subject: ")
 
-    #1: You forgot to ask for the task.
     task = input("Task: ")
 
     priority = input("Priority (high/medium/low): ")
 
-    #2: This must be inside add_task()
     tasks.append({
         "subject": subject,
         "task": task,
         "priority": priority
     })
 
-    #3: This should also be inside add_task()
     print("Task added successfully!\n")
 
 
@@ -24,11 +21,8 @@ def show_tasks():
         print("No tasks yet!\n")
         return
 
-    #4: This must be after the if statement,
-    # not after return.
     print("\nYour Study Tasks:")
 
-    #5: The loop belongs inside show_tasks()
     for i, t in enumerate(tasks):
         print(f"{i+1}. {t['subject']} - {t['task']} (Priority: {t['priority']})")
 
@@ -43,7 +37,6 @@ while True:
 
     choice = input("Choose: ")
 
-    #6: These if statements must be inside the while loop.
     if choice == "1":
         add_task()
 
